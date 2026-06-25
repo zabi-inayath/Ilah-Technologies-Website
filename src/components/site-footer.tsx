@@ -50,12 +50,12 @@ export function SiteFooter() {
             </div>
             <div className="space-y-6">
               <a href="tel:+917448552778" className="block group">
-                <div className="text-[10px] text-muted font-mono mb-1 group-hover:text-accent transition-colors">TELEPHONE</div>
-                <div className="text-sm font-bold tracking-tight">+91 744 855 2778</div>
+                <div className="text-[14px] text-muted font-mono mb-1 group-hover:text-accent transition-colors">TELEPHONE</div>
+                <div className="text-lg font-bold tracking-tight">+91 744 855 2778</div>
               </a>
               <a href="mailto:hello@ilahtech.in" className="block group">
-                <div className="text-[10px] text-muted font-mono mb-1 group-hover:text-accent transition-colors">ELECTRONIC MAIL</div>
-                <div className="text-sm font-bold tracking-tight break-all">hello@ilahtech.in</div>
+                <div className="text-[14px] text-muted font-mono mb-1 group-hover:text-accent transition-colors">ELECTRONIC MAIL</div>
+                <div className="text-lg font-bold tracking-tight break-all">hello@ilahtech.in</div>
               </a>
             </div>
           </div>
