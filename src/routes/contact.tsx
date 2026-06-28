@@ -10,12 +10,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with ilah Technologies. Call +91 744 855 2778 or email ilahtechnologies@gmail.com.",
+          "Get in touch with ilah Technologies. Call +91 744 855 2778 or email hello@ilahtech.in.",
       },
       { property: "og:title", content: "Contact — ilah Technologies" },
       {
         property: "og:description",
-        content: "Call +91 744 855 2778 or email ilahtechnologies@gmail.com.",
+        content: "Call +91 744 855 2778 or email hello@ilahtech.in.",
       },
       { property: "og:url", content: "/contact" },
     ],
@@ -106,7 +106,7 @@ function ContactPage() {
             </div>
           </a>
           <a
-            href="mailto:ilahtechnologies@gmail.com"
+            href="mailto:hello@ilahtech.in"
             className="bg-background p-8 flex flex-col gap-4 hover:bg-secondary transition-colors group"
           >
             <div className="flex items-center justify-between">
@@ -116,7 +116,7 @@ function ContactPage() {
               </div>
             </div>
             <div className="text-xl md:text-2xl font-extrabold tracking-tight break-all">
-              ilahtechnologies@gmail.com
+              projects@ilahtech.in
             </div>
             <div className="text-xs text-muted mt-auto">Replies within one business day</div>
           </a>
