@@ -74,11 +74,10 @@ function PortfolioPage() {
           {categories.map((c, i) => (
             <span
               key={c}
-              className={`text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1.5 border shrink-0 ${
-                i === 0
+              className={`text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1.5 border shrink-0 ${i === 0
                   ? "bg-foreground text-background border-foreground"
                   : "border-border text-muted"
-              }`}
+                }`}
             >
               {c}
             </span>
@@ -89,16 +88,16 @@ function PortfolioPage() {
       {/* Grid */}
       <section className="bg-foreground text-background px-5 py-14 md:px-10 md:py-20">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-8 md:gap-y-16">
+          <div className="grid grid-cols-1 gap-10 md:gap-y-16">
             {portfolio.map((item, i) => {
               const card = (
                 <div className="group">
-                  <div className="w-full aspect-[4/5] bg-neutral-800 outline outline-1 -outline-offset-1 outline-white/5 grid place-items-center mb-4 overflow-hidden relative">
+                  <div className="w-full aspect-video bg-neutral-800 outline outline-1 -outline-offset-1 outline-white/5 grid place-items-center mb-4 overflow-hidden relative">
                     {item.image ? (
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="absolute inset-0 size-full object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <>
