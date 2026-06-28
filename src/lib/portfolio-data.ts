@@ -8,16 +8,26 @@ export type PortfolioItem = {
   url?: string; // live link — fill in manually
   image?: string; // photo URL — fill in manually
   description?: string;
+  status?: string; // live link — fill in manually
 };
 
 export const portfolio: PortfolioItem[] = [
   {
     id: "proj-01",
+    title: "Madrasah Fatimatuz Zahrah Al-Athariyyah Lil Banaat",
+    category: "Website",
+    year: "2026",
+    image: "/portfolio/fatima.png",
+    status: "On-going"
+  },
+  {
+    id: "proj-12",
     title: "Mutahharah - Tajweed & Quran Academy",
     category: "Website",
     year: "2026",
     image: "/portfolio/mutahharah.png",
-    url: "https://mutahharah.com"
+    url: "https://mutahharah.com",
+    status: "Deployed"
   },
   {
     id: "proj-02",
@@ -25,7 +35,8 @@ export const portfolio: PortfolioItem[] = [
     category: "E-Commerce",
     year: "2026",
     image: "/portfolio/salafimaktabah.png",
-    url: "https://salafimaktabah.com"
+    url: "https://salafimaktabah.com",
+    status: "Deployed"
   },
   {
     id: "proj-03",
@@ -33,15 +44,17 @@ export const portfolio: PortfolioItem[] = [
     category: "Website",
     year: "2026",
     image: "/portfolio/hillmountvilla.png",
-    url: "https://hillmountvilla.in"
+    url: "https://hillmountvilla.in",
+    status: "Deployed"
   },
   {
     id: "proj-04",
     title: "Salt N Cure - Low Sodium Foods",
-    category: "Website",
+    category: "Shopify",
     year: "2026",
     image: "/portfolio/saltncure.png",
-    url: "https://saltncure.com"
+    url: "https://saltncure.com",
+    status: "Deployed"
   },
   {
     id: "proj-05",
@@ -49,7 +62,8 @@ export const portfolio: PortfolioItem[] = [
     category: "Website",
     year: "2026",
     image: "/portfolio/alliesofmovement.png",
-    url: "https://alliesofmovement.com"
+    url: "https://alliesofmovement.com",
+    status: "Deployed"
   },
   {
     id: "proj-06",
@@ -57,6 +71,52 @@ export const portfolio: PortfolioItem[] = [
     category: "Website",
     year: "2026",
     image: "/portfolio/arishomes.png",
-    url: "https://arishomes.in"
+    url: "https://arishomes.in",
+    status: "Deployed"
   },
+  {
+    id: "proj-07",
+    title: "Salt Recycing - Salt Recycing Company",
+    category: "Website",
+    year: "2026",
+    image: "/portfolio/saltrecycing.png",
+    url: "https://saltrecycing.com",
+    status: "Deployed"
+  },
+  {
+    id: "proj-08",
+    title: "WOW Tech -  ZLD and Advanced Salt Recycling",
+    category: "Website",
+    year: "2025",
+    image: "/portfolio/wowtech.png",
+    url: "https://wowtech.in/",
+    status: "Deployed"
+  },
+  {
+    id: "proj-09",
+    title: "Asfar Clinic - Multi Speciality Clinic Unani Clinic",
+    category: "Website",
+    year: "2025",
+    image: "/portfolio/asfarclinic.png",
+    url: "https://asfarclinic.com",
+    status: "Deployed"
+  },
+  {
+    id: "proj-10",
+    title: "Chan Basha - Portfolio development",
+    category: "Portfolio",
+    year: "2025",
+    image: "/portfolio/chanbasha.png",
+    url: "https://cbk.co.in",
+    status: "Deployed"
+  },
+  {
+    id: "proj-11",
+    title: "Sano Tech - Cyber Security & Digital Transformation",
+    category: "Website",
+    year: "2025",
+    image: "/portfolio/sanovatech.png",
+    url: "https://sanovatechnologies.com",
+    status: "Deployed"
+  }
 ];

@@ -3,6 +3,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { portfolio } from "@/lib/portfolio-data";
 import { ArrowUpRight, CheckCircle2, Globe2, Layers, Trophy } from "lucide-react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -28,6 +29,23 @@ export const Route = createFileRoute("/portfolio")({
 const categories = ["ALL", "WEB", "MOBILE", "CRM", "SOFTWARE", "SEO"];
 
 function PortfolioPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(portfolio.length / itemsPerPage);
+
+  const currentProjects = portfolio.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
@@ -89,7 +107,7 @@ function PortfolioPage() {
       <section className="bg-foreground text-background px-5 py-14 md:px-10 md:py-20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 gap-10 md:gap-y-16">
-            {portfolio.map((item, i) => {
+            {currentProjects.map((item, i) => {
               const card = (
                 <div className="group">
                   <div className="w-full aspect-video bg-neutral-800 outline outline-1 -outline-offset-1 outline-white/5 grid place-items-center mb-4 overflow-hidden relative">
@@ -112,7 +130,7 @@ function PortfolioPage() {
                         />
                         <div className="text-center relative">
                           <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 block">
-                            PROJ_{String(i + 1).padStart(2, "0")}_PENDING
+                            PROJ_{String((currentPage - 1) * itemsPerPage + i + 1).padStart(2, "0")}_PENDING
                           </span>
                           <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600 block mt-2">
                             IMAGE PLACEHOLDER
@@ -122,7 +140,7 @@ function PortfolioPage() {
                     )}
                     <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-0.5 bg-background/10 backdrop-blur border border-white/10 font-mono text-[9px] text-white">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                      DEPLOYED
+                      {item.status}
                     </div>
                     {item.url && (
                       <div className="absolute top-3 right-3 size-7 bg-background/10 backdrop-blur border border-white/10 grid place-items-center group-hover:bg-accent transition-colors">
@@ -161,7 +179,29 @@ function PortfolioPage() {
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-mono uppercase tracking-widest text-background/50">
-            <span>More case studies in progress · check back soon</span>
+            {totalPages > 1 ? (
+              <div className="flex items-center gap-4">
+                <button 
+                  onClick={handlePrevPage} 
+                  disabled={currentPage === 1}
+                  className="hover:text-white transition-colors disabled:opacity-50 disabled:hover:text-background/50"
+                >
+                  &larr; PREV
+                </button>
+                <span className="text-white">
+                  PAGE {currentPage} / {totalPages}
+                </span>
+                <button 
+                  onClick={handleNextPage} 
+                  disabled={currentPage === totalPages}
+                  className="hover:text-white transition-colors disabled:opacity-50 disabled:hover:text-background/50"
+                >
+                  NEXT &rarr;
+                </button>
+              </div>
+            ) : (
+              <span>More case studies in progress · check back soon</span>
+            )}
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               ARCHIVE_SYNC · LIVE
